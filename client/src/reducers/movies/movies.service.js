@@ -2,24 +2,18 @@ import apiConfig from "../../api/apiConfig";
 import axios from "axios";
 
 const getPopularMovies = async (page) => {
-  const response = await axios.get(
-    `${apiConfig.baseUrl}/movie/popular?page=${page}&api_key=${apiConfig.apiKey}`
-  );
-  return response.data.results;
+  const response = await axios.get(`${apiConfig.baseUrl}?page=${page}`);
+  return response.data.movies;
 };
 
 const getMovieId = async (id) => {
-  const response = await axios.get(
-    `${apiConfig.baseUrl}/movie/${id}?api_key=${apiConfig.apiKey}`
-  );
-  return response.data;
+  const response = await axios.get(`${apiConfig.baseUrl}/${id}`);
+  return response.data.movie;
 };
 
 const getSimilarMovies = async (id) => {
-  const response = await axios.get(
-    `${apiConfig.baseUrl}/movie/${id}/similar?api_key=${apiConfig.apiKey}`
-  );
-  return response.data.results;
+  const response = await axios.get(`${apiConfig.baseUrl}/similar/${id}`);
+  return response.data.movies;
 };
 
 export const MoviesService = {
