@@ -1,0 +1,23 @@
+@media (max-width: 376px) {
+  .movies-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    
+    padding-top: 10rem;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media (min-width: 377px) {
+  .movies-list {
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 4rem;
+
+  }
+}
